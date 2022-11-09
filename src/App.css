@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+.box-container {
+  background-color: #ecf0f1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.box-logo {
+  width: 70px;
+}
+.box-text {
+  color: #000;
+  display: block;
+  font-weight: bold;
+}
+
+
+/* Float */
+/* .box-container {
+  background-color: #ecf0f1;
+  padding-top: 1px;
+}
+.box-logo {
+  width: 70px;
+  float: left;
+}
+.box-text {
+  color: #000;
+  display: block;
+  font-weight: bold;
+} */
