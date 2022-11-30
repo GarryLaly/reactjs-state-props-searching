@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NewsItem = ({ id, title, subtitle }) => {
+const NewsItem = ({ id, slug, title, subtitle }) => {
   return (
-    <Link to={`/detail/${id}`} style={{ textDecoration: "none" }}>
+    // navigate by id
+    // <Link to={`/detail/${id}`} style={{ textDecoration: "none" }}>
+
+    // navigate by slug
+    <Link to={`/detail/${slug}`} style={{ textDecoration: "none" }}>
       <div
         style={{
           backgroundColor: "#666",

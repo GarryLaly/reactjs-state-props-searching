@@ -86,7 +86,7 @@ function App() {
           item.title.toLowerCase().includes(keyword.toLowerCase())
         )
         .map((item, index) => (
-          <NewsItem key={index} id={item.id} title={item.title} subtitle={item.subtitle} />
+          <NewsItem key={index} id={item.id} slug={item.slug} title={item.title} subtitle={item.subtitle} />
         ))}
     </div>
   );
