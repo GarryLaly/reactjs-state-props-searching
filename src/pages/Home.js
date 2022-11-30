@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import logo from "./logo.svg";
-import "./App.css";
-import NewsItem from "./components/NewsItem";
+import logo from "../logo.svg";
+import "../App.css";
+import NewsItem from "../components/NewsItem";
 
 function App() {
   // variable tanpa state
@@ -32,9 +32,7 @@ function App() {
 
   const getArticle = async () => {
     try {
-      const response = await axios.get(
-        "https://8340fa0f-4afd-43b9-8593-2a23fcfa580c.mock.pstmn.io/article-list"
-      );
+      const response = await axios.get("article-list");
       // console.log("response", response.data.data[0].title);
 
       // ini tanpa object desctructuring (contoh 1)
@@ -62,6 +60,9 @@ function App() {
   };
 
   useEffect(() => {
+    axios.defaults.baseURL =
+      "https://8340fa0f-4afd-43b9-8593-2a23fcfa580c.mock.pstmn.io/";
+
     getArticle();
   }, []);
 
@@ -85,7 +86,7 @@ function App() {
           item.title.toLowerCase().includes(keyword.toLowerCase())
         )
         .map((item, index) => (
-          <NewsItem key={index} title={item.title} subtitle={item.subtitle} />
+          <NewsItem key={index} id={item.id} title={item.title} subtitle={item.subtitle} />
         ))}
     </div>
   );

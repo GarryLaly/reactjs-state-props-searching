@@ -1,17 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const NewsItem = ({ title, subtitle }) => {
+const NewsItem = ({ id, title, subtitle }) => {
   return (
-    <div
-      style={{
-        backgroundColor: "#666",
-        padding: 8,
-        marginBottom: 10,
-      }}
-    >
-      <div style={{ color: "white" }}>{title}</div>
-      <div style={{ fontSize: 12, color: "white" }}>{subtitle}</div>
-    </div>
+    <Link to={`/detail/${id}`} style={{ textDecoration: "none" }}>
+      <div
+        style={{
+          backgroundColor: "#666",
+          padding: 8,
+          marginBottom: 10,
+        }}
+      >
+        <div style={{ color: "white" }}>{title}</div>
+        <div style={{ fontSize: 12, color: "white" }}>{subtitle}</div>
+      </div>
+    </Link>
   );
 };
 
